@@ -1,10 +1,6 @@
-// Path where this app is deployed. Because we don’t deploy at the root of the domain
-// we need to keep track of this and adjust any URL matching using this value.
+// Path where this app is deployed. 
 const basePath = './';
 
-// Note: determining the types is typically needed only on the new page (thus: in `pageswap`)
-// However, because we set the `view-transition-names` based on the types (see `mpa.css`)
-// we also determine it on the outgoing page.
 window.addEventListener("pageswap", async (e) => {
 	if (e.viewTransition) {
 		const transitionType = determineTransitionType(e.activation.from, e.activation.entry);
